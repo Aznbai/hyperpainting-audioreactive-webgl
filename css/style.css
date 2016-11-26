@@ -1,7 +1,7 @@
  body {
      color: #fff;
      font-family: Monospace;
-     font-size: 8px;
+     font-size: 10px;
      text-align: center;
      background-color: #000;
      margin: 0px;
@@ -9,7 +9,8 @@
  }
  
  a {
-     color: #88f
+     color: #88f;
+     text-decoration: none;
  }
  
  #info {

@@ -77,7 +77,7 @@ function addTube() {
   var value = 'GrannyKnot';
   var segments = 200;
   var radiusSegments = 300;
-  closed2 = true;
+  var closed2 = true;
   if (tubeMesh) parent.remove(tubeMesh);
   extrudePath = new THREE.Curves.GrannyKnot();
   tube = new THREE.TubeGeometry(extrudePath, segments, 2, radiusSegments, closed2);
@@ -96,7 +96,7 @@ function addGeometry(geometry, color) {
       opacity: 0, //makes tube skin color invisible
       color: color,
       transparent: true,
-      refractionRatio: 50
+      refractionRatio: 0
     }),
     new THREE.MeshBasicMaterial({
       color: 0x00000,
@@ -104,7 +104,7 @@ function addGeometry(geometry, color) {
       wireframe: true,
       wireframeLinewidth: 1,
       transparent: true,
-      refractionRatio: 50
+      refractionRatio: 0
     })
   ]);
   parent.add(tubeMesh);
@@ -193,7 +193,7 @@ function init() {
   parent.add(splineCamera);
   addTube();
   generateMorphTargets(tubeMesh, tube);
-  renderer.setClearColor(new THREE.Color(0x000000));
+  renderer.setClearColor(new THREE.Color(0x0ff000));
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
   container.appendChild(renderer.domElement);
@@ -205,8 +205,8 @@ function init() {
     map: null,
     color: 0x0000ff,
     metalness: 1.0,
-    roughness: 0,
-    opacity: 0.05,
+    roughness: 10,
+    opacity: 0.5,
     side: THREE.BackSide,
     transparent: true,
     shading: THREE.SmoothShading,
@@ -218,7 +218,7 @@ function init() {
     map: null,
     color: 0x000055,
     metalness: 0.0,
-    roughness: 0,
+    roughness: 100,
     opacity: 0.05,
     side: THREE.FrontSide,
     transparent: true,
@@ -396,7 +396,8 @@ function render() {
   }
   if (middle > 1) {
     newColor1 = new THREE.Color(color2);
-    tubeMesh.color = newColor1;
+    // tubeMesh.color = newColor1;
+    renderer.setClearColor(new THREE.Color(color1));
   }
   renderer.toneMappingExposure = params.exposure;
   if (params.autoRotate) {
