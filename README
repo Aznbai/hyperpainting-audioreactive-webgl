@@ -1,4 +1,5 @@
-Realtime audioreactive animation.
-WebGl based rendering of Hyperpaimting is contorolled via user microphone input.
+Realtime, WebGl based, audioreactive, reflective, animated, hyperpainting, dont forget to allow microphone input access in your browser
+The hdr sky cube box is generated from a spheric panorama taken in the University's of Art and Design Offenbach am Main backyard.
 
-visit www.hyperpainting.net for further info.
+Live demo: https://aznbai.github.io/hyperpainting-audioreactive-webgl
+More info: http://hyperpainting.net
