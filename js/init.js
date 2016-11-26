@@ -31,7 +31,7 @@ var params = {
   trebleFreq: 90,
   looptime: 400000,
   offset: 232,
-  sens: 65,
+  sens: 125,
   smooth: 0.75,
   projection: 'normal',
   autoRotate: true,
