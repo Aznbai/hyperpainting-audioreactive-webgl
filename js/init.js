@@ -231,7 +231,7 @@ function init() {
     console.log(item, loaded, total);
   };
   var loader = new THREE.OBJLoader(manager);
-  loader.load('1.obj', function(object) {
+  loader.load('objects/1.obj', function(object) {
     object.traverse(function(child) {
       if (child instanceof THREE.Mesh) {
         child.material = gemBackMaterial;
